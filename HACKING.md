@@ -162,7 +162,7 @@ ssh pi@raspberrypi.local "raspivid --nopreview --timeout 0 -o -" | ffplay -logle
 Voice HAT does not require any driver installation. You only need to load
 device tree overlay on boot:
 ```bash
-echo "dtoverlay=googlevoicehat-soundcard" | sudo tee -a /boot/config.txt
+echo "dtoverlay=googlevoicehat-soundcard" | sudo tee -a /boot/firmware/config.txt
 ```
 
 Voice Bonnet requires driver installation:
