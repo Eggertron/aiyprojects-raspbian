@@ -159,11 +159,22 @@ ssh pi@raspberrypi.local "raspivid --nopreview --timeout 0 -o -" | ffplay -logle
 
 #### Install Voice Bonnet/HAT packages
 
+# Updated for Debian Trixie
+
 Voice HAT does not require any driver installation. You only need to load
 device tree overlay on boot:
 ```bash
 echo "dtoverlay=googlevoicehat-soundcard" | sudo tee -a /boot/firmware/config.txt
+sudo reboot now
 ```
+
+Verify the devices are loaded with this device `Google voiceHAT SoundCard HiFi voicehat-hifi-0`
+```bash
+aplay -l
+arecord -l
+```
+
+# Below is legacy installation steps.
 
 Voice Bonnet requires driver installation:
 ```bash
