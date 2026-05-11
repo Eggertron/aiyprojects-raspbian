@@ -182,6 +182,11 @@ arecord -D hw:1,0 -c 2 -d 5 -f S32_LE -r 48000 -t wav test.wav
 aplay -D plughw:1,0 test.wav
 ```
 
+Testing with TTS generated
+```bash
+ffmpeg -f lavfi -i flite=text="hello world" -f wav - | aplay -D plughw:1,0 -
+```
+
 Test button led
 ```bash
 pinctrl set 25 op
