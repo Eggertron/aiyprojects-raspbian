@@ -182,6 +182,14 @@ arecord -D hw:1,0 -c 2 -d 5 -f S32_LE -r 48000 -t wav test.wav
 aplay -D plughw:1,0 test.wav
 ```
 
+Test button led
+```bash
+pinctrl set 25 op
+pinctrl set 25 dh
+sleep 5
+pinctrl set 25 dl
+```
+
 # Below is legacy installation steps.
 
 Voice Bonnet requires driver installation:
