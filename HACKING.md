@@ -195,6 +195,11 @@ sleep 5
 pinctrl set 25 dl
 ```
 
+Test Button Presses
+```bash
+gpiomon -c /dev/gpiochip0 23
+```
+
 # Below is legacy installation steps.
 
 Voice Bonnet requires driver installation:
