@@ -29,16 +29,16 @@ Before you start, be sure you have the latest version of [Raspbian][raspbian].
 
 ### 1. Add the AIY Debian packages repo
 
-Add AIY package repo:
-
-```bash
-echo "deb https://packages.cloud.google.com/apt aiyprojects-stable main" | sudo tee /etc/apt/sources.list.d/aiyprojects.list
-```
-
 Add Google package keys:
 
 ```bash
-curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /etc/apt/keyrings/apt-key.gpg
+```
+
+Add AIY package repo:
+
+```bash
+echo "deb [signed-by=/etc/apt/keyrings/apt-key.gpg] https://packages.cloud.google.com/apt aiyprojects-stable main" | sudo tee /etc/apt/sources.list.d/aiyprojects.list
 ```
 
 Update and install the latest system updates (including kernel):
