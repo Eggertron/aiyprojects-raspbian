@@ -174,10 +174,12 @@ aplay -l
 arecord -l
 ```
 
+__My card number was 1 and device number 0__
+
 Test Audio Output
 ```bash
 arecord -D hw:1,0 -c 2 -d 5 -f S32_LE -r 48000 -t wav test.wav
-aplay -D plughw:CARD=sndrpigooglevoi,DEV=0 test.wav
+aplay -D plughw:1,0 test.wav
 ```
 
 # Below is legacy installation steps.
